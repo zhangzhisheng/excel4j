@@ -6,13 +6,12 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import org.cn.zszhang.comm.sysutil.reflect.ClassUtil;
-import org.cn.zszhang.comm.sysutil.reflect.FieldUtil;
+import org.cn.zszhang.common.utils.excel4j.reflect.ClassUtil;
+import org.cn.zszhang.common.utils.excel4j.reflect.FieldUtil;
 import org.cn.zszhang.common.utils.excel4j.usermodel.ExcelCell;
 import org.cn.zszhang.common.utils.excel4j.usermodel.ExcelRow;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.stereotype.Component;
 
 
 /**
@@ -21,7 +20,6 @@ import org.springframework.stereotype.Component;
  * @version 1.0
  * @created 20-四月-2015 10:08:35
  */
-@Component
 public class ConfigurableExcel4JavaRowMapper<T> implements Excel4JavaRowMapper<T> {
 	private final static Logger logger = LoggerFactory.getLogger(ConfigurableExcel4JavaRowMapper.class);
 	

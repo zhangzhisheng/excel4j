@@ -53,11 +53,6 @@
 			<artifactId>poi-ooxml</artifactId>
 			<version>3.10-FINAL</version>
 		</dependency>
-		<dependency>
-			<groupId>org.cn.zszhang.common</groupId>
-			<artifactId>sysutil</artifactId>
-			<version>0.0.2-SNAPSHOT</version>
-		</dependency>
 	</dependencies>
 
 </project>

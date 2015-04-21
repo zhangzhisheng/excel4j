@@ -3,9 +3,9 @@ package org.cn.zszhang.common.utils.excel4j.binding;
 import java.lang.reflect.Field;
 import java.util.List;
 
-import org.cn.zszhang.comm.sysutil.reflect.ClassUtil;
-import org.cn.zszhang.comm.sysutil.reflect.FieldUtil;
 import org.cn.zszhang.common.utils.excel4j.config.Excel4JavaConfiguration;
+import org.cn.zszhang.common.utils.excel4j.reflect.ClassUtil;
+import org.cn.zszhang.common.utils.excel4j.reflect.FieldUtil;
 import org.cn.zszhang.common.utils.excel4j.usermodel.ExcelCell;
 import org.cn.zszhang.common.utils.excel4j.usermodel.ExcelRow;
 import org.slf4j.Logger;
