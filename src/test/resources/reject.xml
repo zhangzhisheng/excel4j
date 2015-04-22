@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+
+	<context:component-scan base-package="org.cn.zszhang.study.hellos.svc"></context:component-scan>
+	
+	<!-- <bean id="testUserSvc" class="org.cn.zszhang.study.hellos.svc.TestUserSvc" /> -->
+	<bean id="getDataFromConfig" class="org.cn.zszhang.study.hellos.svc.GetDataFromConfig">
+		<property name="data">
+			<map>
+				<entry key="getAllUser" value="#{testUserSvc.getAll()}"/>
+				<entry key="getOtherUser" value="#{testUserSvc.getAll()}"/>
+				<entry key="getAllElf" value="#{testUserSvc.getAllElf('精灵')}"/>
+			</map>
+		</property>
+	</bean>
+	<bean id="impExp" class="org.cn.zszhang.common.utils.excel4j.importer.DefaultImpExpExcel">
+		<property name="defaultData">
+			<map>
+				<entry key="所有妖精" value="#{testUserSvc.getAll()}"/>
+				<entry key="其它妖精" value="#{testUserSvc.getAll()}"/>
+				<entry key="所有精灵" value="#{testUserSvc.getAllElf('精灵')}"/>
+			</map>
+		</property>
+	</bean>
+	<bean id="ttu" class="org.cn.zszhang.study.hellos.svc.TestTemplate" >
+		<property name="comm_content" value="测试人员信息"></property>
+	</bean>
+	<bean id="ttd" class="org.cn.zszhang.study.hellos.svc.TestTemplate" >
+		<property name="comm_content" value="测试动物信息"></property>
+	</bean>
+	<bean id="tumap" class="org.cn.zszhang.common.utils.excel4j.binding.ConfigurableExcel4JavaRowMapper">
+		<property name="map">
+			<list>
+				<value>b, id</value>
+				<value>c, name </value>
+				<value>3, sex</value>
+				<value>z_g, field</value>
+				<value>aaaa, field</value>
+			</list>
+		</property>
+	</bean>
+</beans>
