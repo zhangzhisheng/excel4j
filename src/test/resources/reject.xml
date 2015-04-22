@@ -17,7 +17,7 @@
 			</map>
 		</property>
 	</bean>
-	<bean id="impExp" class="org.cn.zszhang.common.utils.excel4j.importer.DefaultImpExpExcel">
+	<bean id="impExp" class="org.cn.zszhang.common.utils.excel4j.importer.DefaultImpExpExcel" scope="prototype">
 		<property name="defaultData">
 			<map>
 				<entry key="所有妖精" value="#{testUserSvc.getAll()}"/>

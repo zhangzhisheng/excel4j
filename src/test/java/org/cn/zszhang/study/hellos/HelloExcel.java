@@ -13,28 +13,21 @@ public class HelloExcel {
 	public static void main(String[] args) {
 		ApplicationContext ac = new ClassPathXmlApplicationContext("reject.xml");
 		
+		// impExp 在spring容器初始化时已经注入了一些数据，这些数据可以直接导出。 
 		ImpExpExcel exp = (ImpExpExcel)ac.getBean("impExp");
+		// 获取指定以配置的rowmapper，针对一种javabean进行转入转出
 		Excel4JavaRowMapper<TestUser> mapper = (Excel4JavaRowMapper<TestUser>)ac.getBean("tumap");
-		
+		// 打开excel文件
 		exp.openExcelFile("f:/test/user.xlsx");
-
+		// 读取excel中的数据
 		List<TestUser> users = exp.read(0, Integer.MAX_VALUE, "所有妖精", TestUser.class, mapper);
+		// 写入excel中数据
 		exp.addSheetData(users, "testconfig", 1, mapper);
 		users = exp.read(-1, 1, "所有妖精", TestUser.class, mapper);
 		System.out.println(users);
-
-		System.out.println("==========其它妖精[0,1]=======");
-		users = exp.read(0, 1, "其它妖精", TestUser.class);
-		System.out.println(users);
-		System.out.println("==========其它妖精[1,0]=======");
-		users = exp.read(1, 0, "其它妖精", TestUser.class);
-		System.out.println(users);
-		System.out.println("==========其它妖精[-1,-2]=======");
-		users = exp.read(-1, -2, "其它妖精", TestUser.class);
-		System.out.println(users);
-		
+		// 写入excel文件
 		exp.write2File("f:/test/user3.xlsx");
-		
+		// 关闭打开的excel文件
 		exp.closeExcelFile();
 	}
 
