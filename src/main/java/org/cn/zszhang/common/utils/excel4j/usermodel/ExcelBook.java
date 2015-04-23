@@ -1,5 +1,6 @@
 package org.cn.zszhang.common.utils.excel4j.usermodel;
 
+import java.io.OutputStream;
 import java.util.Iterator;
 
 
@@ -154,10 +155,14 @@ public interface ExcelBook extends Iterable<ExcelSheet> {
 	/**
 	 * Write out this workbook to a file.
 	 * @return  -- 失败返回false
-	 * 
-	 * @param filename    filename
 	 */
 	public boolean write(String filename) ;
+
+	/**
+	 * 写入到文件流
+	 * @return  -- 失败返回false
+	 */
+	public boolean write(OutputStream os) ;
 
     /**
      *  Returns an iterator of the sheets. 

@@ -266,6 +266,20 @@ public class ExcelBookPoiImpl implements ExcelBook {
 		}
 		return true;
 	}
+	
+	/**
+	 * 写入到文件流
+	 * @return  -- 失败返回false
+	 */
+	public boolean write(OutputStream os)  {
+		try {
+			_book.write(os);
+			return true;
+		} catch (IOException e) {
+			logger.warn("写入文件流失败" + os.toString());
+			return false;
+		}
+	}
 
 	/**
      * Alias for {@link #sheetIterator()} to allow  foreach loops:

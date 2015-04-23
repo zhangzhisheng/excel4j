@@ -1,5 +1,6 @@
 package org.cn.zszhang.common.utils.excel4j.importer;
 
+import java.io.OutputStream;
 import java.util.List;
 
 import org.cn.zszhang.common.utils.excel4j.binding.Bean2ExcelRowMapper;
@@ -19,6 +20,13 @@ public interface Export2Excel {
 	 * @param filename    filename
 	 */
 	public void write2File(String filename);
+
+	/**
+	 * 写入到输出流，主要是用于方便web下载功能
+	 * 
+	 * @param os    output stream
+	 */
+	public void write2OutputStream(OutputStream os);
 
 	/**
 	 * 关闭打开的Excel文件和释放内存中的ExcelBook对象

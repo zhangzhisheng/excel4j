@@ -1,6 +1,7 @@
 package org.cn.zszhang.common.utils.excel4j.importer;
 
 import java.io.File;
+import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -32,6 +33,20 @@ public class DefaultImpExpExcel implements ImpExpExcel {
 	
 	public DefaultImpExpExcel(){
 		
+	}
+
+	/**
+	 * 写入到输出流，主要是用于方便web下载功能
+	 * 
+	 * @param os    output stream
+	 */
+	public void write2OutputStream(OutputStream os) {
+		if( !isOpen ) {
+			logger.warn("在打开Excel文件前，无法写入！");
+			return;
+		}
+		writeDefaultData();
+		book.write(os);
 	}
 
 	/**
