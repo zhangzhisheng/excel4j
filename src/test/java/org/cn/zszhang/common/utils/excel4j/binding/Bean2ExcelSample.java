@@ -35,11 +35,8 @@ public class Bean2ExcelSample {
 	public static void main(String[] args) {
 		Excel4Java e4j = new DefaultExcel4Java();
 		e4j.createExcelBook(new File("f:/test/user.xlsx"));
-		//e4j.createExcelBook(2007);
 		List<User> users = new ArrayList<User>();
 		Bean2ExcelSample x = new Bean2ExcelSample();
-		//UserRowMapper mapper = x.new UserRowMapper();
-		//ExcelRowMapper<User> mapper = new DefaultExcelRowMapper<User>();
 		Excel4JavaRowMapper<User> mapper =  new DefaultExcel4JavaRowMapper<User>();
 		
 		users.add(x.new User(1, "格格巫", true));
