@@ -24,26 +24,22 @@ public class ExcelBookFactory {
 	/**
 	 * 通过已有的Excel文件创建工作薄对象，此方法长用于读取excel文件时。
 	 * 
-	 * @param file    file
+	 * @param filename    文件名
 	 */
-	public static ExcelBook openBook(File file) {
-		if( null == file ) {
-			logger.warn("Open NULL file Exception!");
-			return null;
-		}
-		
-		if( !file.exists() ) {
+	public static ExcelBook openBook(String filename) {
+		if( null == filename || filename.isEmpty() ) {
+			logger.warn("打开excel文件时，传入文件名为空!");
 			return null;
 		}
 		
 		try {
-			Workbook wb = WorkbookFactory.create(file);
+			Workbook wb = WorkbookFactory.create(new File(filename));
 			return new ExcelBookPoiImpl(wb);
-		} catch (IOException ioe) {
-			logger.warn("打开Excel文件'" + file.getName() + "'时发生IOException:"	+ ioe.getMessage());
+		} catch (IOException e) {
+			logger.warn("打开Excel文件'" + filename + "'时发生IOException:"	+ e.getMessage());
 			return null;
-		} catch (InvalidFormatException ife) {
-			logger.warn("打开Excel文件'" + file.getName() + "'时发生InvalidFormatException:"	+ ife.getMessage());
+		} catch (InvalidFormatException e) {
+			logger.warn("打开Excel文件'" + filename + "'时发生InvalidFormatException:"	+ e.getMessage());
 			return null;
 		}
 	}

@@ -112,7 +112,7 @@ public class DefaultImpExpExcel implements ImpExpExcel {
 			logger.warn("前面打开的文件还没有执行写入操作，不能打开下一个文件！！");
 			return;
 		}
-		book = ExcelBookFactory.openBook(new File(fileName));
+		book = ExcelBookFactory.openBook(fileName);
 		if( null == book ) {
 			logger.warn("打开文件失败：" + fileName);
 			return;
