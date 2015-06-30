@@ -17,7 +17,7 @@ public interface Excel2Bean {
 	 * 
 	 * @param file    file
 	 */
-	public void createExcelBook(File file);
+	public void createExcelBook(String file);
 
 	/**
 	 * 读取指定页面中指定范围的数据

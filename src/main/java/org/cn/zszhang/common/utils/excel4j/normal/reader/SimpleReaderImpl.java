@@ -62,7 +62,7 @@ public class SimpleReaderImpl implements SimpleReader {
 	 * @param sheetNo
 	 */
 	public SheetData read(String filename, int sheetNo) {
-		ExcelBook wb = ExcelBookFactory.openBook(new File(filename));
+		ExcelBook wb = ExcelBookFactory.openBook(filename);
 		if (wb == null)
 			return null;
 
@@ -80,7 +80,7 @@ public class SimpleReaderImpl implements SimpleReader {
 	 * @param count
 	 */
 	public List<SheetData> read(String filename, int beginSheetNo, int count) {
-		ExcelBook wb = ExcelBookFactory.openBook(new File(filename));
+		ExcelBook wb = ExcelBookFactory.openBook( filename);
 		if (wb == null)
 			return null;
 
@@ -102,7 +102,7 @@ public class SimpleReaderImpl implements SimpleReader {
 	 * @param sheets
 	 */
 	public List<SheetData> read(String filename, int[] sheets) {
-		ExcelBook wb = ExcelBookFactory.openBook(new File(filename));
+		ExcelBook wb = ExcelBookFactory.openBook(filename);
 		if (wb == null || sheets == null)
 			return null;
 

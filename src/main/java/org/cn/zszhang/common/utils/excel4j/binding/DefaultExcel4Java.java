@@ -156,7 +156,7 @@ public class DefaultExcel4Java implements Excel4Java {
 	 * 
 	 * @param file
 	 */
-	public void createExcelBook(File file)  {
+	public void createExcelBook(String file)  {
 		if( isOpen ) {
 			logger.warn("前面打开的文件还没有执行写入操作，不能打开下一个文件！！");
 			return;

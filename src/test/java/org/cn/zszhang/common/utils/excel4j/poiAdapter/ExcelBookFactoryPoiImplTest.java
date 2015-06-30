@@ -11,8 +11,7 @@ public class ExcelBookFactoryPoiImplTest {
 
   @Test
   public void create() {
-	  File file = new File("f:/test/tt.xlsx");
-	  ExcelBook eb = ExcelBookFactory.openBook(file);
+	  ExcelBook eb = ExcelBookFactory.openBook("f:/test/tt.xlsx");
 	  Assert.assertNotNull(eb);
   }
 }

@@ -34,7 +34,7 @@ public class Bean2ExcelSample {
 
 	public static void main(String[] args) {
 		Excel4Java e4j = new DefaultExcel4Java();
-		e4j.createExcelBook(new File("f:/test/user.xlsx"));
+		e4j.createExcelBook("f:/test/user.xlsx");
 		List<User> users = new ArrayList<User>();
 		Bean2ExcelSample x = new Bean2ExcelSample();
 		Excel4JavaRowMapper<User> mapper =  new DefaultExcel4JavaRowMapper<User>();

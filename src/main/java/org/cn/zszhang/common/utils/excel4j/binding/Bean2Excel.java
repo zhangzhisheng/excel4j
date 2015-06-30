@@ -79,7 +79,7 @@ public interface Bean2Excel {
 	 * 
 	 * @param file    file
 	 */
-	public void createExcelBook(File file);
+	public void createExcelBook(String file);
 
 	/**
 	 * 将beans写入到指定的sheet页的指定位置
