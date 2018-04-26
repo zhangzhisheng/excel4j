@@ -18,11 +18,11 @@ public class Export2ExcelTest {
 		users.add(new TestUser(3, "蓝精灵", true));
 		
 		Export2Excel exp = new DefaultImpExpExcel();
-		exp.openExcelFile("f:/test/user.xlsx");
+		exp.openExcelFile(this.getClass().getResource("/user.xlsx").getPath());
 		
 		String sheetName = "sheet01";
 		exp.addSheetData(sheetName, 1, users);
 		
-		exp.write2File("f:/test/user3.xlsx");
+		exp.write2File(this.getClass().getResource("/user2.xlsx").getPath());
 	}
 }

@@ -15,7 +15,7 @@ public class SimpleReaderTest {
 
   @Test
   public void readBook() {
-	  List<SheetData> lsd = sr.read("f:/test/user.xlsx");
+	  List<SheetData> lsd = sr.read(this.getClass().getResource("/user.xlsx").getPath());
 	  logger.info(lsd.toString());
   }
 
